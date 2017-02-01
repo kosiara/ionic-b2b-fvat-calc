@@ -1,3 +1,9 @@
-page-about {
+$fvat-icon-img-margin-right:            41px !default;
 
+page-about {
+  .fvat-icon-img {
+    margin-top: $item-wp-padding-icon-top;
+    margin-bottom: $item-wp-padding-icon-bottom;
+    margin-right: 30px;
+  }
 }

@@ -8,8 +8,13 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+  public detailsVisible = false;
+
   constructor(public navCtrl: NavController) {
 
   }
 
+  showOptionsClick() {
+    this.detailsVisible = !this.detailsVisible;
+  }
 }

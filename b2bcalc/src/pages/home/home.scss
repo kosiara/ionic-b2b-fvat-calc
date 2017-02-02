@@ -10,4 +10,9 @@ page-home {
   .home-table-profit-row {
     background-color: color($colors, secondary);
   }
+
+  .bottom-table-options-row {
+    font-size: 19px;
+    color: color($colors, primary);
+  }
 }

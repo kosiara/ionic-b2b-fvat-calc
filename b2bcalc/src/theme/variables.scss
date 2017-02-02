@@ -24,13 +24,18 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #387ef5,
-  secondary:  #32db64,
+  primary:    #673AB7,
+  secondary:  #02897b,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222
 );
 
+$toolbar-background : color($colors, secondary);
+//$toolbar-border-color
+$toolbar-text-color : color($colors, light);
+//$toolbar-active-color
+//$toolbar-inactive-color
 
 // App iOS Variables
 // --------------------------------------------------
@@ -76,3 +81,4 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+

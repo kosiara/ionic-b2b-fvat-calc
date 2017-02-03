@@ -24,35 +24,3 @@ page-home {
 .arrow-options {
    transition: transform 0.3s ease-in-out;
 }
-
-//// generic transform
-//@mixin transform($transforms) {
-//  -moz-transform: $transforms;
-//  -o-transform: $transforms;
-//  -ms-transform: $transforms;
-//  -webkit-transform: $transforms;
-//  transform: $transforms;
-//}
-//
-//// rotate
-//@mixin rotate ($deg) {
-//  @include transform(rotate(#{$deg}deg));
-//}
-//
-///////////////////////////////////
-//
-//
-//.spin {
-//  animation-name: spin;
-//  animation-duration: 1000ms;
-//  animation-iteration-count: 1;
-//  animation-timing-function: linear;
-//}
-//@keyframes spin {
-//  from {
-//    transform:rotate(0deg);
-//  }
-//  to {
-//    transform:rotate(180deg);
-//  }
-//}

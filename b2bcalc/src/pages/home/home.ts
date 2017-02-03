@@ -14,7 +14,9 @@ export class HomePage {
 
   }
 
-  showOptionsClick() {
+  showOptionsClick(e) {
     this.detailsVisible = !this.detailsVisible;
+    console.log(e);
+    e.target.classList.toggle("up");
   }
 }

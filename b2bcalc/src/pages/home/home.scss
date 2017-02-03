@@ -16,3 +16,11 @@ page-home {
     color: color($colors, primary);
   }
 }
+
+.up .arrow-options {
+  transform: rotate(-180deg);
+}
+
+.arrow-options {
+   transition: transform 0.3s ease-in-out;
+}

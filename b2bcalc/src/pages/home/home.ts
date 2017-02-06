@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {Content} from 'ionic-angular';
 
 import { NavController } from 'ionic-angular';
 
@@ -7,6 +8,8 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
+
+  @ViewChild(Content) content: Content;
 
   public detailsVisible = false;
 
@@ -43,5 +46,13 @@ export class HomePage {
     this.detailsVisible = !this.detailsVisible;
     console.log(e);
     e.target.classList.toggle("up");
+    if (this.detailsVisible) {
+      this.scrollToBottom();
+    }
+  }
+
+  scrollToBottom(){
+    let dimensions = this.content.getContentDimensions();
+    this.content.scrollTo(0, dimensions.contentBottom, 0);
   }
 }

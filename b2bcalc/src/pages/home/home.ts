@@ -20,6 +20,8 @@ export class HomePage {
   private currentIncomeTaxRate:number = 18;
 
   constructor(public navCtrl: NavController) {
+    var userLang = navigator.language;
+    console.log(userLang)
   }
 
   onGrossValueChanged(value) {

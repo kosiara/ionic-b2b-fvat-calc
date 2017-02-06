@@ -14,6 +14,11 @@ export class HomePage {
 
   }
 
+  onGrossValueChanged(value) {
+    console.log('onGrossValueChanged' + value);
+    console.log(value.target.value)
+  }
+
   showOptionsClick(e) {
     this.detailsVisible = !this.detailsVisible;
     console.log(e);

@@ -10,6 +10,8 @@ export class HomePage {
 
   public detailsVisible = false;
 
+  public netValue:string;
+
   constructor(public navCtrl: NavController) {
 
   }
@@ -17,6 +19,10 @@ export class HomePage {
   onGrossValueChanged(value) {
     console.log('onGrossValueChanged' + value);
     console.log(value.target.value)
+
+    let grossValue = value.target.value;
+
+    this.netValue = ""+grossValue*0.78;
   }
 
   showOptionsClick(e) {

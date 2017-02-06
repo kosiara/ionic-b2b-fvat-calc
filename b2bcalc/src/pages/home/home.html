@@ -9,72 +9,76 @@
   <h3>
     Wprowadź kwotę BRUTTO lub NETTO, aby obliczyć VAT i koszty.
   </h3>
-  <ion-row margin-right="50px" margin-left="50px" wrap>
-    <ion-col width-40>
-      <ion-label class="home-table-label" color="primary">kwota BRUTTO</ion-label>
-    </ion-col>
-    <ion-col width-30>
-      <ion-input type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
-                 [(ngModel)]="grossValue" (keyup)="onGrossValueChanged($event)" class="home-table-label-input" placeholder="0.00"></ion-input>
-    </ion-col>
-    <ion-col width-20>
-      <ion-label class="home-table-label" color="primary">PLN</ion-label>
-    </ion-col>
-  </ion-row>
 
-  <ion-row margin-right="50px" margin-left="50px" wrap>
-    <ion-col width-40>
-      <ion-label class="home-table-label" color="primary">kwota NETTO</ion-label>
-    </ion-col>
-    <ion-col width-30>
-      <ion-input type="number"  type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
-                 [(ngModel)]="netValue" class="home-table-label-input" placeholder="0.00"></ion-input>
-    </ion-col>
-    <ion-col width-20>
-      <ion-label class="home-table-label" color="primary">PLN</ion-label>
-    </ion-col>
-  </ion-row>
+  <ion-card  style="margin: 0px; padding: 0px; width:100%">
+      <ion-row margin-right="50px" margin-left="50px" wrap>
+        <ion-col width-40>
+          <ion-label class="home-table-label" color="primary">kwota BRUTTO</ion-label>
+        </ion-col>
+        <ion-col width-30>
+          <ion-input type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
+                     [(ngModel)]="grossValue" (keyup)="onGrossValueChanged($event)" class="home-table-label-input" placeholder="0.00"></ion-input>
+        </ion-col>
+        <ion-col width-20>
+          <ion-label class="home-table-label" color="primary">PLN</ion-label>
+        </ion-col>
+      </ion-row>
 
-  <ion-row margin-right="50px" margin-left="50px" wrap>
-    <ion-col width-40>
-      <ion-label class="home-table-label" color="primary">VAT</ion-label>
-    </ion-col>
-    <ion-col width-30>
-      <ion-input class="home-table-label-input" type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
-                 [(ngModel)]="vatPriceValue" placeholder="0.00" readonly></ion-input>
-    </ion-col>
-    <ion-col width-20>
-      <ion-label class="home-table-label" color="primary">PLN</ion-label>
-    </ion-col>
-  </ion-row>
+      <ion-row margin-right="50px" margin-left="50px" wrap>
+        <ion-col width-40>
+          <ion-label class="home-table-label" color="primary">kwota NETTO</ion-label>
+        </ion-col>
+        <ion-col width-30>
+          <ion-input type="number"  type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
+                     [(ngModel)]="netValue" class="home-table-label-input" placeholder="0.00"></ion-input>
+        </ion-col>
+        <ion-col width-20>
+          <ion-label class="home-table-label" color="primary">PLN</ion-label>
+        </ion-col>
+      </ion-row>
 
-  <ion-row margin-right="50px" margin-left="50px" wrap>
-    <ion-col width-40>
-      <ion-label class="home-table-label" color="primary">koszty</ion-label>
-    </ion-col>
-    <ion-col width-30>
-      <ion-input class="home-table-label-input" type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
-                 [(ngModel)]="costValue" placeholder="0.00" readonly></ion-input>
-    </ion-col>
-    <ion-col width-20>
-      <ion-label class="home-table-label" color="primary">PLN</ion-label>
-    </ion-col>
-  </ion-row>
+      <ion-row margin-right="50px" margin-left="50px" wrap>
+        <ion-col width-40>
+          <ion-label class="home-table-label" color="primary">VAT</ion-label>
+        </ion-col>
+        <ion-col width-30>
+          <ion-input class="home-table-label-input" type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
+                     [(ngModel)]="vatPriceValue" placeholder="0.00" readonly></ion-input>
+        </ion-col>
+        <ion-col width-20>
+          <ion-label class="home-table-label" color="primary">PLN</ion-label>
+        </ion-col>
+      </ion-row>
 
-  <div class="home-table-profit-row" wrap>
-    <ion-row margin-right="50px" margin-left="50px">
-      <ion-col width-40>
-        <ion-label class="home-table-label" color="primary">zysk</ion-label>
-      </ion-col>
-      <ion-col width-30>
-        <ion-input class="home-table-label-input" type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
-                   [(ngModel)]="incomeFromFvatValue" placeholder="0.00" readonly></ion-input>
-      </ion-col>
-      <ion-col width-20>
-        <ion-label class="home-table-label" color="primary">PLN</ion-label>
-      </ion-col>
-    </ion-row>
-  </div>
+      <ion-row margin-right="50px" margin-left="50px" wrap>
+        <ion-col width-40>
+          <ion-label class="home-table-label" color="primary">koszty</ion-label>
+        </ion-col>
+        <ion-col width-30>
+          <ion-input class="home-table-label-input" type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
+                     [(ngModel)]="costValue" placeholder="0.00" readonly></ion-input>
+        </ion-col>
+        <ion-col width-20>
+          <ion-label class="home-table-label" color="primary">PLN</ion-label>
+        </ion-col>
+      </ion-row>
+
+      <div class="home-table-profit-row" margin-bottom="20px" wrap>
+        <ion-row margin-right="50px" margin-left="50px">
+          <ion-col width-40>
+            <ion-label class="home-table-label" color="primary">zysk</ion-label>
+          </ion-col>
+          <ion-col width-30>
+            <ion-input class="home-table-label-input" type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
+                       [(ngModel)]="incomeFromFvatValue" placeholder="0.00" readonly></ion-input>
+          </ion-col>
+          <ion-col width-20>
+            <ion-label class="home-table-label" color="primary">PLN</ion-label>
+          </ion-col>
+        </ion-row>
+      </div>
+
+  </ion-card>
 
   <ion-row style="font-size: 30px;" margin-right="50px" margin-top="50px">
     <ion-col>

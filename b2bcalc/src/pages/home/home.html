@@ -14,7 +14,8 @@
       <ion-label class="home-table-label" color="primary">kwota BRUTTO</ion-label>
     </ion-col>
     <ion-col width-30>
-      <ion-input type="number" [(ngModel)]="grossValue" (keyup)="onGrossValueChanged($event)" class="home-table-label-input" placeholder="0.00"></ion-input>
+      <ion-input type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
+                 [(ngModel)]="grossValue" (keyup)="onGrossValueChanged($event)" class="home-table-label-input" placeholder="0.00"></ion-input>
     </ion-col>
     <ion-col width-20>
       <ion-label class="home-table-label" color="primary">PLN</ion-label>
@@ -26,7 +27,8 @@
       <ion-label class="home-table-label" color="primary">kwota NETTO</ion-label>
     </ion-col>
     <ion-col width-30>
-      <ion-input type="number" [(ngModel)]="netValue" class="home-table-label-input" placeholder="0.00"></ion-input>
+      <ion-input type="number" put type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
+                 [(ngModel)]="netValue" class="home-table-label-input" placeholder="0.00"></ion-input>
     </ion-col>
     <ion-col width-20>
       <ion-label class="home-table-label" color="primary">PLN</ion-label>
@@ -38,7 +40,8 @@
       <ion-label class="home-table-label" color="primary">VAT</ion-label>
     </ion-col>
     <ion-col width-30>
-      <ion-input class="home-table-label-input" [(ngModel)]="vatPriceValue" placeholder="0.00" readonly></ion-input>
+      <ion-input class="home-table-label-input" put type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
+                 [(ngModel)]="vatPriceValue" placeholder="0.00" readonly></ion-input>
     </ion-col>
     <ion-col width-20>
       <ion-label class="home-table-label" color="primary">PLN</ion-label>
@@ -50,7 +53,8 @@
       <ion-label class="home-table-label" color="primary">koszty</ion-label>
     </ion-col>
     <ion-col width-30>
-      <ion-input class="home-table-label-input" [(ngModel)]="costValue" placeholder="0.00" readonly></ion-input>
+      <ion-input class="home-table-label-input" put type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
+                 [(ngModel)]="costValue" placeholder="0.00" readonly></ion-input>
     </ion-col>
     <ion-col width-20>
       <ion-label class="home-table-label" color="primary">PLN</ion-label>

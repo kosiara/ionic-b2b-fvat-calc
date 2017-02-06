@@ -88,13 +88,13 @@
   <div *ngIf="detailsVisible">
     <ion-row margin-right="50px" margin-left="50px" margin-top="50px">
       <label class="bottom-table-options-row" margin-right="15px" style="width:80px;" >VAT</label>
-      <input class="bottom-table-options-row" [(ngModel)]="currentVatRate" style="width:50px;" />
+      <input class="bottom-table-options-row" type="number" [(ngModel)]="currentVatRate" style="width:50px;" />
       <label class="bottom-table-options-row" margin-left="15px">%</label>
     </ion-row>
 
     <ion-row margin-right="50px" margin-left="50px">
       <label class="bottom-table-options-row" margin-right="15px" style="width:80px;" >podatek</label>
-      <input class="bottom-table-options-row" [(ngModel)]="currentIncomeTaxRate" style="width:50px;" />
+      <input class="bottom-table-options-row" type="number" [(ngModel)]="currentIncomeTaxRate" style="width:50px;" />
       <label class="bottom-table-options-row" margin-left="15px">%</label>
     </ion-row>
   </div>

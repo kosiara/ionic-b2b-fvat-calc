@@ -56,7 +56,7 @@ export class HomePage {
       setTimeout(() => {
         let dimensions = this.content.getContentDimensions();
         this.content.scrollTo(0, dimensions.contentBottom + 300, 0);
-      }, 350)
+      }, 150)
     )
   }
 }

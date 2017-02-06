@@ -8,7 +8,7 @@ log.txt
 *.sublime-project
 *.sublime-workspace
 
-**/bko.keystore
+**/fvat-release.keystore
 
 .idea/
 .vscode/

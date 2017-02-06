@@ -31,10 +31,10 @@ export class HomePage {
 
   private refreshPriceValues() {
     console.log(this.currentVatRate)
-    this.netValue = this.grossValue * (1 - this.currentVatRate/100);
-    this.vatPriceValue = this.grossValue * this.currentVatRate/100;
-    this.costValue = this.netValue * this.currentIncomeTaxRate/100;
-    this.incomeFromFvatValue = this.vatPriceValue + this.costValue;
+    this.netValue = this.grossValue * (1 - this.currentVatRate/100); this.netValue = +this.netValue.toFixed(2);
+    this.vatPriceValue = this.grossValue * this.currentVatRate/100;  this.vatPriceValue = +this.vatPriceValue.toFixed(2);
+    this.costValue = this.netValue * this.currentIncomeTaxRate/100;  this.costValue = +this.costValue.toFixed(2);
+    this.incomeFromFvatValue = this.vatPriceValue + this.costValue;  this.incomeFromFvatValue = +this.incomeFromFvatValue.toFixed(2);
   }
 
   showOptionsClick(e) {

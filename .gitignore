@@ -8,6 +8,8 @@ log.txt
 *.sublime-project
 *.sublime-workspace
 
+**/bko.keystore
+
 .idea/
 .vscode/
 .sass-cache/

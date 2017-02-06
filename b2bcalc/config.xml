@@ -3,7 +3,7 @@
         version="0.0.1" >
   <name>b2bcalc</name>
   <description>An awesome Ionic/Cordova app.</description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+  <author email="bkosarzycki@gmail.com" href="https://play.google.com/store/apps/developer?id=Bartosz+Kosarzycki">Bartosz Kosarzycki</author>
   <content src="index.html"/>
   <access origin="*"/>
   <allow-navigation href="http://ionic.local/*"/>

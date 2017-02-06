@@ -10,19 +10,32 @@ export class HomePage {
 
   public detailsVisible = false;
 
+  public grossValue:string;
   public netValue:string;
+  public vatPriceValue:string;
+  public costValue:string;
+  public incomeFromFvatValue:string;
+
+  private currentVatRate:number = 23;
+  private currentIncomeTaxRate:number = 18;
 
   constructor(public navCtrl: NavController) {
-
   }
 
   onGrossValueChanged(value) {
-    console.log('onGrossValueChanged' + value);
-    console.log(value.target.value)
+    //console.log('onGrossValueChanged' + value);
+    //console.log(value.target.value)
 
-    let grossValue = value.target.value;
+    this.grossValue = value.target.value;
+    this.refreshPriceValues();
+  }
 
-    this.netValue = ""+grossValue*0.78;
+  private refreshPriceValues() {
+    console.log(this.currentVatRate)
+    this.netValue = "" + (+this.grossValue) * (1 - this.currentVatRate/100);
+    this.vatPriceValue = "" + (+this.grossValue) * this.currentVatRate/100;
+    this.costValue = "" + (+this.netValue) * this.currentIncomeTaxRate/100;
+    this.incomeFromFvatValue = "" + ((+this.vatPriceValue) + (+this.costValue));
   }
 
   showOptionsClick(e) {

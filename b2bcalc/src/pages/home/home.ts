@@ -51,8 +51,12 @@ export class HomePage {
     }
   }
 
-  scrollToBottom(){
-    let dimensions = this.content.getContentDimensions();
-    this.content.scrollTo(0, dimensions.contentBottom, 0);
+  scrollToBottom() {
+    return new Promise((resolve) =>
+      setTimeout(() => {
+        let dimensions = this.content.getContentDimensions();
+        this.content.scrollTo(0, dimensions.contentBottom + 300, 0);
+      }, 350)
+    )
   }
 }

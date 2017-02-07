@@ -63,17 +63,20 @@
         </ion-col>
       </ion-row>
 
-      <div class="home-table-profit-row" margin-bottom="20px" wrap>
+      <div class="home-table-profit-row" style="font-weight: bold"
+              margin-bottom="20px" wrap>
         <ion-row margin-right="50px" margin-left="50px">
           <ion-col width-40>
-            <ion-label class="home-table-label" color="primary">zysk</ion-label>
+            <ion-label class="home-table-label" style="color: white;">zysk</ion-label>
+            <!--<ion-label color="primary">zysk</ion-label>-->
           </ion-col>
           <ion-col width-30>
-            <ion-input class="home-table-label-input" type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
+            <ion-input class="home-table-label-input white-placeholder-color" type="number" style="color: white;"
+                       ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
                        [(ngModel)]="incomeFromFvatValue" placeholder="0.00" readonly></ion-input>
           </ion-col>
           <ion-col width-20>
-            <ion-label class="home-table-label" color="primary">PLN</ion-label>
+            <ion-label class="home-table-label" style="color: white;">PLN</ion-label>
           </ion-col>
         </ion-row>
       </div>

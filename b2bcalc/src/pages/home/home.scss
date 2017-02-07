@@ -31,3 +31,18 @@ page-home {
   border-bottom: 0px solid #dedede;
 }
 //====== endof: override default bottom border from ionic ======
+
+.white-placeholder-color {
+  input::-webkit-input-placeholder {
+    color: white ;
+  }
+  input:-moz-placeholder {
+    color: white ;
+  }
+  input:-ms-input-placeholder { /* IE10+ */
+    color: white ;
+  }
+  input::-moz-placeholder {
+    color: white ;
+  }
+}

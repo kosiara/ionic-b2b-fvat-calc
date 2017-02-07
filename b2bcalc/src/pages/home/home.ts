@@ -31,13 +31,23 @@ export class HomePage {
     //console.log(value.target.value)
 
     this.grossValue = value.target.value;
-    this.refreshPriceValues();
+    this.refreshPriceValues(ChangeOrigin.GrossValue);
   }
 
-  private refreshPriceValues() {
+  onNetValueChanged(value) {
+    this.netValue = value.target.value;
+    this.refreshPriceValues(ChangeOrigin.NetValue);
+  }
+
+  private refreshPriceValues(changeOrigin: ChangeOrigin) {
     console.log(this.currentVatRate)
-    this.netValue = this.grossValue * (1 - this.currentVatRate/100); this.netValue = +this.netValue.toFixed(2);
-    this.vatPriceValue = this.grossValue * this.currentVatRate/100;  this.vatPriceValue = +this.vatPriceValue.toFixed(2);
+    if (changeOrigin === ChangeOrigin.GrossValue) {
+      this.netValue = this.grossValue / (1 + this.currentVatRate / 100); this.netValue = +this.netValue.toFixed(2);
+    }
+    if (changeOrigin === ChangeOrigin.NetValue) {
+      this.grossValue = this.netValue * (1 + this.currentVatRate / 100); this.grossValue = +this.grossValue.toFixed(2);
+    }
+    this.vatPriceValue = this.netValue * this.currentVatRate/100;  this.vatPriceValue = +this.vatPriceValue.toFixed(2);
     this.costValue = this.netValue * this.currentIncomeTaxRate/100;  this.costValue = +this.costValue.toFixed(2);
     this.incomeFromFvatValue = this.vatPriceValue + this.costValue;  this.incomeFromFvatValue = +this.incomeFromFvatValue.toFixed(2);
   }
@@ -59,4 +69,11 @@ export class HomePage {
       }, 150)
     )
   }
+
+
+}
+
+enum ChangeOrigin {
+    GrossValue,
+    NetValue
 }

@@ -43,7 +43,7 @@
         </ion-col>
         <ion-col width-30>
           <ion-input class="home-table-label-input" type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
-                     [(ngModel)]="vatPriceValue" placeholder="0.00" readonly></ion-input>
+                     [(ngModel)]="vatPriceValue" placeholder="0.00" disabled="disabled" readonly></ion-input>
         </ion-col>
         <ion-col width-20>
           <ion-label class="home-table-label" color="primary">PLN</ion-label>
@@ -56,7 +56,7 @@
         </ion-col>
         <ion-col width-30>
           <ion-input class="home-table-label-input" type="number" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
-                     [(ngModel)]="costValue" placeholder="0.00" readonly></ion-input>
+                     [(ngModel)]="costValue" placeholder="0.00" disabled="disabled" readonly></ion-input>
         </ion-col>
         <ion-col width-20>
           <ion-label class="home-table-label" color="primary">PLN</ion-label>
@@ -72,7 +72,7 @@
           </ion-col>
           <ion-col width-30>
             <ion-input class="home-table-label-input white-placeholder-color" type="number" style="color: white;"
-                       ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01"
+                       ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" disabled="disabled"
                        [(ngModel)]="incomeFromFvatValue" placeholder="0.00" readonly></ion-input>
           </ion-col>
           <ion-col width-20>

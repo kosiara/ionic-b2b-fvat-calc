@@ -9,6 +9,7 @@ log.txt
 *.sublime-workspace
 
 **/fvat-release.keystore
+**/releases/*.apk
 
 .idea/
 .vscode/

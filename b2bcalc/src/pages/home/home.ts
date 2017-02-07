@@ -44,7 +44,7 @@ export class HomePage {
     if (changeOrigin === ChangeOrigin.GrossValue) {
       this.netValue = this.grossValue / (1 + this.currentVatRate / 100); this.netValue = +this.netValue.toFixed(2);
     }
-    if (changeOrigin === ChangeOrigin.NetValue) {
+    if (changeOrigin === ChangeOrigin.NetValue || changeOrigin === ChangeOrigin.External) {
       this.grossValue = this.netValue * (1 + this.currentVatRate / 100); this.grossValue = +this.grossValue.toFixed(2);
     }
     this.vatPriceValue = this.netValue * this.currentVatRate/100;  this.vatPriceValue = +this.vatPriceValue.toFixed(2);
@@ -70,10 +70,18 @@ export class HomePage {
     )
   }
 
+  onVatRateChanged(value) {
+    this.refreshPriceValues(ChangeOrigin.External);
+  }
+
+  onIncomeTaxRateChanged(value) {
+    this.refreshPriceValues(ChangeOrigin.External);
+  }
 
 }
 
 enum ChangeOrigin {
     GrossValue,
-    NetValue
+    NetValue,
+    External
 }

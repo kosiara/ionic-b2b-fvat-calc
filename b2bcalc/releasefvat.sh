@@ -1,4 +1,4 @@
 #!/bin/bash    
 #
-./release.sh fvat-release 0.0.1
+./release.sh fvat-release 0.0.2
  

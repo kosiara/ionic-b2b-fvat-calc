@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.bko.b2bcalc" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0"
-        version="0.0.2" >
+        version="0.0.3" >
   <name>FVAT Kalkulator</name>
   <description>An awesome Ionic/Cordova app.</description>
   <author email="bkosarzycki@gmail.com" href="https://play.google.com/store/apps/developer?id=Bartosz+Kosarzycki">Bartosz Kosarzycki</author>

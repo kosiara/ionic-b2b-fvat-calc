@@ -3,6 +3,7 @@ import {Content} from 'ionic-angular';
 
 import { NavController } from 'ionic-angular';
 import { DBConn } from "../db/DBConn";
+import { ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -23,12 +24,22 @@ export class HomePage {
   private currentVatRate:number = 23;
   private currentIncomeTaxRate:number = 18;
 
-  constructor(public navCtrl: NavController) {
+  private dbConn: DBConn;
+
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
     var userLang = navigator.language;
     console.log(userLang)
 
-    let dbConn = DBConn.Instance;
+    this.dbConn = DBConn.Instance;
+  }
 
+  onTestClick(value) {
+    let toast = this.toastCtrl.create({
+      message: 'No of items:' +
+      (this.dbConn._birthdays == null ? "0" : this.dbConn._birthdays.length),
+      duration: 1500
+    });
+    toast.present();
   }
 
   onGrossValueChanged(value) {

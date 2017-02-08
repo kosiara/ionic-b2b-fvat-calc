@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {Content} from 'ionic-angular';
 
 import { NavController } from 'ionic-angular';
+import { DBConn } from "../db/DBConn";
 
 @Component({
   selector: 'page-home',
@@ -25,6 +26,9 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
     var userLang = navigator.language;
     console.log(userLang)
+
+    let dbConn = DBConn.Instance;
+
   }
 
   onGrossValueChanged(value) {

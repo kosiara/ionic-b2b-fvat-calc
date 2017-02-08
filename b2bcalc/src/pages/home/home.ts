@@ -2,7 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {Content} from 'ionic-angular';
 
 import { NavController } from 'ionic-angular';
-import { DBConn } from "../db/DBConn";
+import {DBConn, A} from "../db/DBConn";
 import { ToastController } from 'ionic-angular';
 
 @Component({
@@ -30,7 +30,14 @@ export class HomePage {
     var userLang = navigator.language;
     console.log(userLang)
 
+    let ref = this;
+
     this.dbConn = DBConn.Instance;
+    this.dbConn.getAll().then(
+      function (value: A) {
+        ref.onTestClick(null);
+      }
+    )
   }
 
   onTestClick(value) {

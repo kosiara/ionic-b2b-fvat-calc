@@ -8,7 +8,7 @@ export class DBConn {
 
   private static _instance: DBConn;
   private _db;
-  public _birthdays: A[];
+  private _birthdays: A[];
 
   private constructor() {
 
@@ -29,7 +29,7 @@ export class DBConn {
     return this._db.post(birthday);
   }
 
-  getAll(): Promise<A> {
+  getAll(): Promise<A[]> {
 
     if (!this._birthdays) {
       return this._db.allDocs({include_docs: true})

@@ -28,22 +28,28 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
     var userLang = navigator.language;
-    console.log(userLang)
-
-    let ref = this;
+    console.log(userLang);
 
     this.dbConn = DBConn.Instance;
+    this.getItems();
+  }
+
+  onTestClick(value) {
+    this.getItems();
+  }
+
+  getItems() {
+    let ref = this;
     this.dbConn.getAll().then(
-      function (value: A) {
-        ref.onTestClick(null);
+      function (value: A[]) {
+        ref.shownumberOfItems(value);
       }
     )
   }
 
-  onTestClick(value) {
+  shownumberOfItems(arr : A[]) {
     let toast = this.toastCtrl.create({
-      message: 'No of items:' +
-      (this.dbConn._birthdays == null ? "0" : this.dbConn._birthdays.length),
+      message: 'No of items:' + (arr == null ? "0" : arr.length),
       duration: 1500
     });
     toast.present();

@@ -7,26 +7,18 @@ import * as PouchDB from 'pouchdb';
 export class DBConn {
 
   private static _instance: DBConn;
-  private db;
+  private _db;
   public _birthdays: A[];
 
   private constructor() {
 
     //todo: refactor using: http://gonehybrid.com/how-to-use-pouchdb-sqlite-for-local-storage-in-ionic-2/
-    //this.db = new PouchDB('myDB.db', {adapter: 'cordova-sqlite'});
-    this.db = new PouchDB('myDB.db', {
-        //adapter: 'cordova-sqlite'}
+    this._db = new PouchDB('myDB.db', {
         adapter: 'websql'
       }
     );
-    console.log("Hey look, I've got PouchDB:", this.db);
-    console.log("PouchDB class name:", this.db.constructor.name);
 
-    let a = new A();
-    a.a = "xxx";
-    a.b = "yyy";
-
-    this.add(a);
+    this.add(<A>{ a: "xxx", b: "yyy" });
   }
 
   public static get Instance() {
@@ -34,13 +26,13 @@ export class DBConn {
   }
 
   add(birthday: A) {
-    return this.db.post(birthday);
+    return this._db.post(birthday);
   }
 
   getAll(): Promise<A> {
 
     if (!this._birthdays) {
-      return this.db.allDocs({include_docs: true})
+      return this._db.allDocs({include_docs: true})
         .then(docs => {
 
           this._birthdays = docs.rows.map(row => {

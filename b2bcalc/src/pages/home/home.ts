@@ -2,8 +2,9 @@ import {Component, ViewChild} from '@angular/core';
 import {Content} from 'ionic-angular';
 
 import { NavController } from 'ionic-angular';
-import {DBConn, A} from "../db/DBConn";
+import { VatRatesDbService } from "../db/VatRatesDbService";
 import { ToastController } from 'ionic-angular';
+import {Rate} from "../db/model/Rate";
 
 @Component({
   selector: 'page-home',
@@ -24,13 +25,10 @@ export class HomePage {
   private currentVatRate:number = 23;
   private currentIncomeTaxRate:number = 18;
 
-  private dbConn: DBConn;
-
-  constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController, private vatRatesDbService: VatRatesDbService) {
     var userLang = navigator.language;
     console.log(userLang);
 
-    this.dbConn = DBConn.Instance;
     this.getItems();
   }
 
@@ -40,14 +38,14 @@ export class HomePage {
 
   getItems() {
     let ref = this;
-    this.dbConn.getAll().then(
-      function (value: A[]) {
+    this.vatRatesDbService.getAll().then(
+      function (value: Rate[]) {
         ref.shownumberOfItems(value);
       }
     )
   }
 
-  shownumberOfItems(arr : A[]) {
+  shownumberOfItems(arr : Rate[]) {
     let toast = this.toastCtrl.create({
       message: 'No of items:' + (arr == null ? "0" : arr.length),
       duration: 1500
